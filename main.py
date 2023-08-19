@@ -20,15 +20,13 @@ def save_data(entries):
 
 def display_entries(entries, page_size, page_number):
     """Вывод постранично записей на экран"""
+
     start_index = (page_number - 1) * page_size
     end_index = start_index + page_size
 
-    if page_number <= 0 or page_number > len(entries) // page_size + 1:
-        print("Неверный номер страницы.")
-
     if entries:
         for index, entry in enumerate(entries[start_index:end_index], start=1):
-            print(f'{index}.', ','.join(entry))
+            print(f'{index}', ','.join(entry))
     else:
         print('Записей нет, спрева добавте их.')
 
